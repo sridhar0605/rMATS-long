@@ -113,24 +113,24 @@ filter_data <- function(drim_data, sample_df) {
 
 plot_transcripts_per_gene <- function(drim_data, out_dir_path) {
     plot <- DRIMSeq::plotData(drim_data)
-    plot_file_path <- base::paste0(out_dir_path, '/transcripts_per_gene.png')
+    plot_file_path <- base::paste0(out_dir_path, '/transcripts_per_gene.pdf')
     ggplot2::ggsave(plot=plot, plot_file_path)
 }
 
 plot_precision <- function(drim_data, out_dir_path) {
     plot <- DRIMSeq::plotPrecision(drim_data)
     plot_file_path <- base::paste0(out_dir_path,
-                                   '/precision_by_gene_expression.png')
+                                   '/precision_by_gene_expression.pdf')
     ggplot2::ggsave(plot=plot, plot_file_path)
 }
 
 plot_pvalues <- function(drim_data, out_dir_path) {
     plot <- DRIMSeq::plotPValues(drim_data)
-    plot_file_path <- base::paste0(out_dir_path, '/gene_pvalues.png')
+    plot_file_path <- base::paste0(out_dir_path, '/gene_pvalues.pdf')
     ggplot2::ggsave(plot=plot, plot_file_path)
 
     plot <- DRIMSeq::plotPValues(drim_data, level='feature')
-    plot_file_path <- base::paste0(out_dir_path, '/transcript_pvalues.png')
+    plot_file_path <- base::paste0(out_dir_path, '/transcript_pvalues.pdf')
     ggplot2::ggsave(plot=plot, plot_file_path)
 }
 
